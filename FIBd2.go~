@@ -10,17 +10,17 @@ import (
 
 func main() {
 	// read in in string form
-	nn := os.Args[1]
-	mm := os.Args[2]
+	n := os.Args[1]
+	k := os.Args[2]
 
 	//convert to int for both
-	n, err := strconv.Atoi(nn)
+	nn, err := strconv.Atoi(n)
 	if err != nil {
 		// handle error
 		fmt.Println(err)
 		os.Exit(2)
 	}
-	m, err := strconv.Atoi(mm)
+	kk, err := strconv.Atoi(k)
 	if err != nil {
 		// handle error
 		fmt.Println(err)
@@ -33,7 +33,6 @@ func main() {
 	seq[1] = 1
 	//run it then print the answear
 	for i := 0; i < (nn - 2); i++ {
-		if i < 
 		seq[i+2] = seq[i]*kk + seq[i+1]
 	}
 	fmt.Println(seq)

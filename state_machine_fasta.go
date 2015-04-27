@@ -12,14 +12,17 @@ import (
 	"sort"
 )
 
+// we have a new "seq" type which is a struct containg fields
 type seq struct {
 	name string
 	seq  []byte
 	gc   float64
 }
 
+// make a new type, kind of like a collection of seq
 type seqs []seq
 
+// these are all methods, i think they have something to do with the sort function
 func (s seqs) Len() int           { return len(s) }
 func (s seqs) Less(i, j int) bool { return s[i].gc > s[j].gc }
 func (s seqs) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
@@ -34,6 +37,9 @@ func main() {
 	var ss seqs
 	sc := bufio.NewScanner(f)
 	for sc.Scan() {
+
+		// l takes each line of the file and runs it through our state machine
+
 		l := bytes.TrimSpace(sc.Bytes())
 		if len(l) == 0 {
 			continue

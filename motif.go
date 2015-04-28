@@ -22,4 +22,6 @@ func main() {
 		}
 	}
 	fmt.Print("\n")
+
+	fmt.Println(len(seq1))
 }

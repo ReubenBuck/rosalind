@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	string := os.Args[2]
+	string := os.Args[1]
 	fmt.Println("total length =", len(string))
 	fmt.Println("A =", strings.Count(string, "A"))
 	fmt.Println("C =", strings.Count(string, "C"))
